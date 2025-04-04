@@ -212,3 +212,132 @@ PS C:\Users\princ\Desktop\DEV\Git-Exercises>
 
 
 
+## Bundle 2
+### Exercise 1
+
+```bash
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git checkout -b ft/bundle-2
+Switched to a new branch 'ft/bundle-2'
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git status
+On branch ft/bundle-2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        service.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git add .
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git commit -m "feat: add initial HTML structure for service page"
+[ft/bundle-2 6f49858] feat: add initial HTML structure for service page
+ 1 file changed, 10 insertions(+)
+ create mode 100644 service.html
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git push
+fatal: The current branch ft/bundle-2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/bundle-2
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\princ\Desktop\DEV\Git-Exercises>     git push --set-upstream origin ft/bundle-2
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 443 bytes | 443.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting:
+remote:      https://github.com/princoo/Bundle-1-Ex-1-Repo/pull/new/ft/bundle-2
+remote:
+To https://github.com/princoo/Bundle-1-Ex-1-Repo.git
+ * [new branch]      ft/bundle-2 -> ft/bundle-2
+branch 'ft/bundle-2' set up to track 'origin/ft/bundle-2'.
+PS C:\Users\princ\Desktop\DEV\Git-Exercises>
+
+```
+
+### Exercise 2
+
+```bash
+
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git pull
+Updating 6f49858..557b174
+Fast-forward
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git checkout -b ft/service-redesign
+Switched to a new branch 'ft/service-redesign'
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git add .
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git commit -m "fix: update service page content"
+[ft/service-redesign 92ddd33] fix: update service page content
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git push
+fatal: The current branch ft/service-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/service-redesign
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+PS C:\Users\princ\Desktop\DEV\Git-Exercises>     git push --set-upstream origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 358 bytes | 179.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/princoo/Bundle-1-Ex-1-Repo/pull/new/ft/service-redesign
+remote:
+To https://github.com/princoo/Bundle-1-Ex-1-Repo.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+branch 'ft/service-redesign' set up to track 'origin/ft/service-redesign'.
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git add .
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git commit -m "changing service page content"   
+[main ece6f8a] changing service page content
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git branch
+  dev
+  ft/bundle-2
+  ft/service-redesign
+* main
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Merge branch 'main' into ft/service-redesign
+Writing objects: 100% (3/3), 343 bytes | 343.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/princoo/Bundle-1-Ex-1-Repo.git
+   557b174..ece6f8a  main -> main
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+Your branch is up to date with 'origin/ft/service-redesign'.
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git merge main
+Auto-merging service.html
+CONFLICT (content): Merge conflict in service.html
+Automatic merge failed; fix conflicts and then commit the result.
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git add .
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git commit
+[ft/service-redesign f32278a] Merge branch 'main' into ft/service-redesign
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 374 bytes | 374.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/princoo/Bundle-1-Ex-1-Repo.git
+   92ddd33..f32278a  ft/service-redesign -> ft/service-redesign
+PS C:\Users\princ\Desktop\DEV\Git-Exercises> 
+
+```
+
